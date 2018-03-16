@@ -14,5 +14,5 @@ env:
 jdk:
   - oraclejdk8
 after_success:
-  - mvn verify --quiet --batch-mode
+  - mvn verify --quiet --batch-mode -Pcodecov
   - "bash <(curl -s https://codecov.io/bash)"
