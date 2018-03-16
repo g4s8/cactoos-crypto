@@ -4,16 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <distributionManagement>
     <repository>
-      <id>bintray-g4s8-maven-android</id>
-      <name>g4s8-maven-android</name>
-      <url>https://api.bintray.com/maven/g4s8/maven-android/com.g4s8.cryptocactoos/;publish=1</url>
+      <id>bintray-g4s8-maven</id>
+      <name>mvn</name>
+      <url>https://api.bintray.com/maven/g4s8/mvn/com.g4s8.cryptocactoos/;publish=1</url>
     </repository>
   </distributionManagement>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.g4s8</groupId>
   <artifactId>cryptocactoos</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.1</version>
   <name>CryptoCactoos</name>
   <description>Crypto extensions for Cactoos library</description>
   <url>https://github.com/g4s8/CryptoCactoos</url>
