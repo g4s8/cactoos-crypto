@@ -105,9 +105,6 @@
             <version>0.8.0</version>
             <configuration>
               <output>file</output>
-              <excludes>
-                <exclude>**/*.sketch</exclude>
-              </excludes>
             </configuration>
             <executions>
               <execution>
@@ -164,7 +161,7 @@
               </execution>
               <execution>
                 <id>jacoco-site</id>
-                <phase>install</phase>
+                <phase>verify</phase>
                 <goals>
                   <goal>report</goal>
                 </goals>
