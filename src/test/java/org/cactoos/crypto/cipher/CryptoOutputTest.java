@@ -55,7 +55,7 @@ public final class CryptoOutputTest {
                 "AES/CBC/PKCS5Padding",
                 new CipherSpec(
                     new SecretKeySpec(
-                        new byte[]{
+                        new byte[] {
                             (byte) 27, (byte) -61, (byte) -81, (byte) 97,
                             (byte) 40, (byte) -55, (byte) -58, (byte) -86,
                             (byte) 89, (byte) 34, (byte) -7, (byte) 95,
@@ -64,7 +64,7 @@ public final class CryptoOutputTest {
                         "AES"
                     ),
                     new IvParameterSpec(
-                        new byte[]{
+                        new byte[] {
                             (byte) -53, (byte) 30, (byte) 6, (byte) -54,
                             (byte) 87, (byte) 109, (byte) 123, (byte) -17,
                             (byte) -1, (byte) -111, (byte) -66, (byte) 40,
@@ -76,7 +76,7 @@ public final class CryptoOutputTest {
         );
         try (final OutputStream stream = out.stream()) {
             stream.write(
-                new byte[]{
+                new byte[] {
                     (byte) 32, (byte) -35, (byte) 31, (byte) -75,
                     (byte) 121, (byte) 111, (byte) 113, (byte) -85,
                     (byte) -27, (byte) 61, (byte) 8, (byte) 14,
@@ -87,7 +87,7 @@ public final class CryptoOutputTest {
         MatcherAssert.assertThat(
             baos.toByteArray(),
             Matchers.equalTo(
-                new byte[]{
+                new byte[] {
                     (byte) 6, (byte) 37, (byte) -117, (byte) 75,
                     (byte) -121, (byte) -23, (byte) -110, (byte) -83,
                     (byte) -31, (byte) 85, (byte) 56, (byte) -78,
@@ -110,7 +110,7 @@ public final class CryptoOutputTest {
                 "AES/CBC/PKCS5Padding",
                 new CipherSpec(
                     new SecretKeySpec(
-                        new byte[]{
+                        new byte[] {
                             (byte) -62, (byte) -113, (byte) -41, (byte) 9,
                             (byte) 25, (byte) 18, (byte) 5, (byte) -90,
                             (byte) -72, (byte) 28, (byte) -41, (byte) 109,
@@ -119,7 +119,7 @@ public final class CryptoOutputTest {
                         "AES"
                     ),
                     new IvParameterSpec(
-                        new byte[]{
+                        new byte[] {
                             (byte) 80, (byte) 41, (byte) -6, (byte) 91,
                             (byte) 17, (byte) -37, (byte) 116, (byte) -55,
                             (byte) -99, (byte) 12, (byte) 31, (byte) -125,
@@ -131,7 +131,7 @@ public final class CryptoOutputTest {
         );
         try (final OutputStream stream = out.stream()) {
             stream.write(
-                new byte[]{
+                new byte[] {
                     (byte) 28, (byte) -31, (byte) -70, (byte) -8,
                     (byte) 72, (byte) 65, (byte) -63, (byte) -117,
                     (byte) -107, (byte) 15, (byte) -112, (byte) -90,
@@ -146,7 +146,7 @@ public final class CryptoOutputTest {
         MatcherAssert.assertThat(
             baos.toByteArray(),
             Matchers.equalTo(
-                new byte[]{
+                new byte[] {
                     (byte) -65, (byte) -108, (byte) 81, (byte) 52,
                     (byte) -42, (byte) 38, (byte) -1, (byte) 34,
                     (byte) -20, (byte) 77, (byte) 16, (byte) -45,

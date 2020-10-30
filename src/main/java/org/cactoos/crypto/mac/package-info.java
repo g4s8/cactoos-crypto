@@ -23,8 +23,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 /**
- * Cactoos wrappers for {@link javax.crypto.Mac},
- * represented as {@link org.cactoos.Bytes}.
+ * Cactoos wrappers for {@link javax.crypto.Mac}, represented as
+ * {@link org.cactoos.Bytes}.
  * @author Kirill (g4s8.public@gmail.com)
  * @version $Id$
  * @since

@@ -24,14 +24,12 @@
  */
 package org.cactoos.crypto.mac;
 
-import java.io.IOException;
 import java.io.InputStream;
 import javax.crypto.Mac;
 import org.cactoos.Bytes;
 import org.cactoos.Input;
 import org.cactoos.Scalar;
 import org.cactoos.crypto.common.ChunkUpdate;
-import org.cactoos.scalar.IoCheckedScalar;
 
 /**
  * MAC of input.
@@ -47,7 +45,8 @@ public final class MacOf implements Bytes {
     /**
      * MAC source.
      */
-    private final IoCheckedScalar<Mac> mcc;
+    private final Scalar<Mac> mcc;
+
     /**
      * Ctor.
      * @param input Input
@@ -55,11 +54,11 @@ public final class MacOf implements Bytes {
      */
     public MacOf(final Input input, final Scalar<Mac> mac) {
         this.src = input;
-        this.mcc = new IoCheckedScalar<>(mac);
+        this.mcc = mac;
     }
 
     @Override
-    public byte[] asBytes() throws IOException {
+    public byte[] asBytes() throws Exception {
         final Mac mac = this.mcc.value();
         try (final InputStream stream = this.src.stream()) {
             new ChunkUpdate(

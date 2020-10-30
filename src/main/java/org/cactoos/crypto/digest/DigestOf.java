@@ -24,14 +24,13 @@
  */
 package org.cactoos.crypto.digest;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.security.MessageDigest;
 import org.cactoos.Bytes;
 import org.cactoos.Input;
 import org.cactoos.Scalar;
 import org.cactoos.crypto.common.ChunkUpdate;
-import org.cactoos.scalar.IoCheckedScalar;
+import org.cactoos.scalar.IoChecked;
 
 /**
  * Digest of input.
@@ -47,7 +46,8 @@ public final class DigestOf implements Bytes {
     /**
      * Digest.
      */
-    private final IoCheckedScalar<MessageDigest> dgst;
+    private final IoChecked<MessageDigest> dgst;
+
     /**
      * Ctor.
      * @param input Input source
@@ -55,11 +55,11 @@ public final class DigestOf implements Bytes {
      */
     public DigestOf(final Input input, final Scalar<MessageDigest> digest) {
         this.src = input;
-        this.dgst = new IoCheckedScalar<>(digest);
+        this.dgst = new IoChecked<>(digest);
     }
 
     @Override
-    public byte[] asBytes() throws IOException {
+    public byte[] asBytes() throws Exception {
         final MessageDigest digest = this.dgst.value();
         try (final InputStream stream = this.src.stream()) {
             new ChunkUpdate((bts, len) -> digest.update(bts, 0, len))

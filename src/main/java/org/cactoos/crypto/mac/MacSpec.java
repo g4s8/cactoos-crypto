@@ -27,21 +27,21 @@ package org.cactoos.crypto.mac;
 import java.security.Key;
 import javax.crypto.Mac;
 import org.cactoos.Proc;
-import org.cactoos.func.IoCheckedProc;
 
 /**
  * MAC specification.
  * @author Kirill (g4s8.public@gmail.com)
  * @version $Id$
  * @since 0.1
- * @todo #1:30min Add all missed MAC specs,
- *  e.g. with AlgorithmParameterSpec etc.
+ * @todo #1:30min Add all missed MAC specs, e.g. with AlgorithmParameterSpec
+ *  etc.
  */
 public final class MacSpec implements Proc<Mac> {
     /**
      * Init procedure.
      */
-    private final IoCheckedProc<Mac> init;
+    private final Proc<Mac> init;
+
     /**
      * Ctor.
      * @param key MAC key
@@ -49,12 +49,13 @@ public final class MacSpec implements Proc<Mac> {
     public MacSpec(final Key key) {
         this(mac -> mac.init(key));
     }
+
     /**
      * Primary ctor.
      * @param init Init procedure
      */
     private MacSpec(final Proc<Mac> init) {
-        this.init = new IoCheckedProc<>(init);
+        this.init = init;
     }
 
     @Override

@@ -23,8 +23,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 /**
- * Cactoos wrappers for {@link java.security.MessageDigest},
- * represented as {@link org.cactoos.Bytes}.
+ * Cactoos wrappers for {@link java.security.MessageDigest}, represented as
+ * {@link org.cactoos.Bytes}.
  * @author Kirill (g4s8.public@gmail.com)
  * @version $Id$
  * @since 0.1

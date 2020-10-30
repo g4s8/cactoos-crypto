@@ -24,7 +24,6 @@
  */
 package org.cactoos.crypto.digest;
 
-import java.io.IOException;
 import org.cactoos.io.InputOf;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.MatcherAssert;
@@ -42,11 +41,11 @@ import org.junit.Test;
 @SuppressWarnings("PMD.AvoidDuplicateLiterals")
 public final class DigestOfTest {
     @Test
-    public void calculateDigest() throws IOException {
+    public void calculateDigest() throws Exception {
         MatcherAssert.assertThat(
             new DigestOf(
                 new InputOf(
-                    new byte[]{
+                    new byte[] {
                         (byte) 0x11, (byte) 0x22, (byte) 0x33, (byte) 0x44,
                         (byte) 0x55, (byte) 0x66, (byte) 0x77, (byte) 0x88,
                         (byte) 0x99, (byte) 0xAA, (byte) 0xBB, (byte) 0xCC,
@@ -56,7 +55,7 @@ public final class DigestOfTest {
                 new DigestFrom("SHA-256")
             ).asBytes(),
             CoreMatchers.equalTo(
-                new byte[]{
+                new byte[] {
                     (byte) -112, (byte) -120, (byte) -125, (byte) 84,
                     (byte) 90, (byte) -44, (byte) 24, (byte) 103,
                     (byte) 40, (byte) -5, (byte) -2, (byte) 0,

@@ -24,7 +24,6 @@
  */
 package org.cactoos.crypto.cipher;
 
-import java.io.IOException;
 import java.io.OutputStream;
 import javax.crypto.Cipher;
 import javax.crypto.CipherOutputStream;
@@ -71,7 +70,7 @@ public final class CryptoOutput implements Output {
     }
 
     @Override
-    public OutputStream stream() throws IOException {
+    public OutputStream stream() throws Exception {
         return new CipherOutputStream(
             this.src.stream(),
             this.cphr.apply(this.mode)
@@ -86,6 +85,7 @@ public final class CryptoOutput implements Output {
          * Origin.
          */
         private final Output output;
+
         /**
          * Ctor.
          * @param origin Origin output
@@ -103,7 +103,7 @@ public final class CryptoOutput implements Output {
         }
 
         @Override
-        public OutputStream stream() throws IOException {
+        public OutputStream stream() throws Exception {
             return this.output.stream();
         }
     }
@@ -116,6 +116,7 @@ public final class CryptoOutput implements Output {
          * Origin.
          */
         private final Output output;
+
         /**
          * Ctor.
          * @param origin Origin output
@@ -133,7 +134,7 @@ public final class CryptoOutput implements Output {
         }
 
         @Override
-        public OutputStream stream() throws IOException {
+        public OutputStream stream() throws Exception {
             return this.output.stream();
         }
     }

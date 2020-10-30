@@ -24,25 +24,24 @@
  */
 package org.cactoos.crypto.cipher;
 
-import java.io.IOException;
 import javax.crypto.Cipher;
 import org.cactoos.Func;
 import org.cactoos.Scalar;
-import org.cactoos.scalar.IoCheckedScalar;
+import org.cactoos.scalar.IoChecked;
 
 /**
  * Cipher of algorithm with provided mode.
  * @author Kirill (g4s8.public@gmail.com)
  * @version $Id$
  * @since 0.1
- * @todo #1:30min Add all missed constructors, it should allow to create
- *  a Cipher with Security provider instance or name specified.
+ * @todo #1:30min Add all missed constructors, it should allow to create a
+ *  Cipher with Security provider instance or name specified.
  */
 public final class CipherFrom implements Func<Integer, Cipher> {
     /**
      * Cipher .
      */
-    private final IoCheckedScalar<Cipher> cphr;
+    private final IoChecked<Cipher> cphr;
     /**
      * Cipher mode.
      */
@@ -56,6 +55,7 @@ public final class CipherFrom implements Func<Integer, Cipher> {
     public CipherFrom(final String alg, final CipherSpec spec) {
         this(() -> Cipher.getInstance(alg), spec);
     }
+
     /**
      * Primary ctor.
      * @param cipher Cipher
@@ -65,12 +65,12 @@ public final class CipherFrom implements Func<Integer, Cipher> {
         final Scalar<Cipher> cipher,
         final CipherSpec spec
     ) {
-        this.cphr = new IoCheckedScalar<>(cipher);
+        this.cphr = new IoChecked<>(cipher);
         this.spec = spec;
     }
 
     @Override
-    public Cipher apply(final Integer mode) throws IOException {
+    public Cipher apply(final Integer mode) throws Exception {
         final Cipher cipher = this.cphr.value();
         this.spec.exec(mode, cipher);
         return cipher;

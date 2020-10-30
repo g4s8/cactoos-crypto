@@ -23,8 +23,8 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 /**
- * Cactoos wrappers for {@link javax.crypto.Cipher},
- * encrypting and decrypting inputs and outputs.
+ * Cactoos wrappers for {@link javax.crypto.Cipher}, encrypting and decrypting
+ * inputs and outputs.
  * @author Kirill (g4s8.public@gmail.com)
  * @version $Id$
  * @since 0.1

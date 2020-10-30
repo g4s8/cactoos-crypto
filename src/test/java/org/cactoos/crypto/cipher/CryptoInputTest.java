@@ -62,20 +62,28 @@ public final class CryptoInputTest {
                         "AES/CBC/PKCS5Padding",
                         new CipherSpec(
                             new SecretKeySpec(
-                                new byte[]{
-                                    (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
-                                    (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
-                                    (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
-                                    (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                                new byte[] {
+                                    (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                                    (byte) 0x00,
+                                    (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                                    (byte) 0x00,
+                                    (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                                    (byte) 0x00,
+                                    (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                                    (byte) 0x00,
                                 },
                                 "AES"
                             ),
                             new IvParameterSpec(
-                                new byte[]{
-                                    (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
-                                    (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
-                                    (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
-                                    (byte) 0x00, (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                                new byte[] {
+                                    (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                                    (byte) 0x00,
+                                    (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                                    (byte) 0x00,
+                                    (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                                    (byte) 0x00,
+                                    (byte) 0x00, (byte) 0x00, (byte) 0x00,
+                                    (byte) 0x00,
                                 }
                             )
                         )
@@ -83,7 +91,7 @@ public final class CryptoInputTest {
                 )
             ).asBytes(),
             CoreMatchers.equalTo(
-                new byte[]{
+                new byte[] {
                     (byte) 122, (byte) -54, (byte) 15, (byte) -39,
                     (byte) -68, (byte) -42, (byte) -20, (byte) 124,
                     (byte) -97, (byte) -105, (byte) 70, (byte) 102,
@@ -103,7 +111,7 @@ public final class CryptoInputTest {
             new BytesOf(
                 new CryptoInput.Dec(
                     new InputOf(
-                        new byte[]{
+                        new byte[] {
                             (byte) 79, (byte) -45, (byte) -15, (byte) 41,
                             (byte) -49, (byte) -127, (byte) -111, (byte) -123,
                             (byte) -42, (byte) 24, (byte) 113, (byte) -59,
@@ -118,20 +126,27 @@ public final class CryptoInputTest {
                         "AES/CBC/PKCS5Padding",
                         new CipherSpec(
                             new SecretKeySpec(
-                                new byte[]{
-                                    (byte) 15, (byte) -107, (byte) 113, (byte) -38,
-                                    (byte) -66, (byte) 39, (byte) -16, (byte) 37,
-                                    (byte) 57, (byte) -58, (byte) -10, (byte) 52,
-                                    (byte) -19, (byte) -62, (byte) -86, (byte) 126,
+                                new byte[] {
+                                    (byte) 15, (byte) -107, (byte) 113,
+                                    (byte) -38,
+                                    (byte) -66, (byte) 39, (byte) -16,
+                                    (byte) 37,
+                                    (byte) 57, (byte) -58, (byte) -10,
+                                    (byte) 52,
+                                    (byte) -19, (byte) -62, (byte) -86,
+                                    (byte) 126,
                                 },
                                 "AES"
                             ),
                             new IvParameterSpec(
-                                new byte[]{
-                                    (byte) -28, (byte) 74, (byte) 52, (byte) -108,
+                                new byte[] {
+                                    (byte) -28, (byte) 74, (byte) 52,
+                                    (byte) -108,
                                     (byte) -71, (byte) 34, (byte) 68, (byte) 52,
-                                    (byte) 112, (byte) 76, (byte) 69, (byte) -76,
-                                    (byte) 101, (byte) 12, (byte) 16, (byte) -83,
+                                    (byte) 112, (byte) 76, (byte) 69,
+                                    (byte) -76,
+                                    (byte) 101, (byte) 12, (byte) 16,
+                                    (byte) -83,
                                 }
                             )
                         )
@@ -139,7 +154,7 @@ public final class CryptoInputTest {
                 )
             ).asBytes(),
             Matchers.equalTo(
-                new byte[]{
+                new byte[] {
                     (byte) -54, (byte) 20, (byte) -109, (byte) 109,
                     (byte) -123, (byte) 125, (byte) -14, (byte) 123,
                     (byte) -17, (byte) 110, (byte) -57, (byte) 60,

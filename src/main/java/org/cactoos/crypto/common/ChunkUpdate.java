@@ -49,6 +49,7 @@ public final class ChunkUpdate implements Proc<InputStream> {
      * Buffer size.
      */
     private final int size;
+
     /**
      * Ctor.
      * @param update Update procedure (byte-array, bytes length)
@@ -56,6 +57,7 @@ public final class ChunkUpdate implements Proc<InputStream> {
     public ChunkUpdate(final BiProc<byte[], Integer> update) {
         this(update, ChunkUpdate.DEFAULT_BUFFER);
     }
+
     /**
      * Ctor.
      * @param update Update procedure (byte-array, bytes length)

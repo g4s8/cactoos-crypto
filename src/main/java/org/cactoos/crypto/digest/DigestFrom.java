@@ -27,21 +27,22 @@ package org.cactoos.crypto.digest;
 import java.io.IOException;
 import java.security.MessageDigest;
 import org.cactoos.Scalar;
-import org.cactoos.scalar.IoCheckedScalar;
+import org.cactoos.scalar.IoChecked;
 
 /**
  * Make a digest for algorithm.
  * @author Kirill (g4s8.public@gmail.com)
  * @version $Id$
  * @since 0.1
- * @todo #1:30min Add all missed constructors, it should allow to create
- *  a Digest with Security provider instance or name specified.
+ * @todo #1:30min Add all missed constructors, it should allow to create a
+ *  Digest with Security provider instance or name specified.
  */
 public final class DigestFrom implements Scalar<MessageDigest> {
     /**
      * Source digest.
      */
-    private final IoCheckedScalar<MessageDigest> src;
+    private final IoChecked<MessageDigest> src;
+
     /**
      * Ctor.
      * @param alg Algorithm name
@@ -49,12 +50,13 @@ public final class DigestFrom implements Scalar<MessageDigest> {
     public DigestFrom(final String alg) {
         this(() -> MessageDigest.getInstance(alg));
     }
+
     /**
      * Ctor.
      * @param src Source
      */
     private DigestFrom(final Scalar<MessageDigest> src) {
-        this.src = new IoCheckedScalar<>(src);
+        this.src = new IoChecked<>(src);
     }
 
     @Override

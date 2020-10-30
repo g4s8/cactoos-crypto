@@ -24,7 +24,6 @@
  */
 package org.cactoos.crypto.cipher;
 
-import java.io.IOException;
 import java.security.Key;
 import java.security.spec.AlgorithmParameterSpec;
 import javax.crypto.Cipher;
@@ -36,14 +35,15 @@ import org.cactoos.func.IoCheckedBiProc;
  * @author Kirill (g4s8.public@gmail.com)
  * @version $Id$
  * @since 0.1
- * @todo #1:30min Add all constructors to reference all
- *  Cipher.init methods (with random, specs, etc).
+ * @todo #1:30min Add all constructors to reference all Cipher.init methods
+ *  (with random, specs, etc).
  */
 public final class CipherSpec implements BiProc<Integer, Cipher> {
     /**
      * Init with mode procedure.
      */
     private final IoCheckedBiProc<Integer, Cipher> init;
+
     /**
      * Ctor.
      * @param key Cipher key
@@ -55,6 +55,7 @@ public final class CipherSpec implements BiProc<Integer, Cipher> {
     ) {
         this((mode, cipher) -> cipher.init(mode, key, spec));
     }
+
     /**
      * Primary ctor.
      * @param init Init procedure
@@ -64,8 +65,7 @@ public final class CipherSpec implements BiProc<Integer, Cipher> {
     }
 
     @Override
-    public void exec(final Integer mode, final Cipher input)
-        throws IOException {
+    public void exec(final Integer mode, final Cipher input) throws Exception {
         this.init.exec(mode, input);
     }
 }

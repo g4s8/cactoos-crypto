@@ -28,25 +28,26 @@ import javax.crypto.Mac;
 import org.cactoos.Proc;
 import org.cactoos.Scalar;
 import org.cactoos.func.IoCheckedProc;
-import org.cactoos.scalar.IoCheckedScalar;
+import org.cactoos.scalar.IoChecked;
 
 /**
  * MAC of input.
  * @author Kirill (g4s8.public@gmail.com)
  * @version $Id$
  * @since 0.1
- * @todo #1:30min Add all missed constructors, it should allow to create
- *  a MAC with Security provider instance or name specified.
+ * @todo #1:30min Add all missed constructors, it should allow to create a MAC
+ *  with Security provider instance or name specified.
  */
 public final class MacFrom implements Scalar<Mac> {
     /**
      * MAC source.
      */
-    private final IoCheckedScalar<Mac> mac;
+    private final IoChecked<Mac> mac;
     /**
      * MAC spec source.
      */
     private final IoCheckedProc<Mac> spec;
+
     /**
      * Ctor.
      * @param alg Algorithm name
@@ -55,13 +56,14 @@ public final class MacFrom implements Scalar<Mac> {
     public MacFrom(final String alg, final Proc<Mac> spec) {
         this(() -> Mac.getInstance(alg), spec);
     }
+
     /**
      * Primary ctor.
      * @param mac MAC source
      * @param spec MAC spec source
      */
     private MacFrom(final Scalar<Mac> mac, final Proc<Mac> spec) {
-        this.mac = new IoCheckedScalar<>(mac);
+        this.mac = new IoChecked<>(mac);
         this.spec = new IoCheckedProc<>(spec);
     }
 

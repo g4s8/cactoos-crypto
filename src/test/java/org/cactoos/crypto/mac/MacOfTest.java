@@ -46,7 +46,7 @@ public final class MacOfTest {
         MatcherAssert.assertThat(
             new MacOf(
                 new InputOf(
-                    new byte[]{
+                    new byte[] {
                         (byte) 0x00, (byte) 0x11, (byte) 0x22, (byte) 0x33,
                     }
                 ),
@@ -54,11 +54,15 @@ public final class MacOfTest {
                     "HmacSHA256",
                     new MacSpec(
                         new SecretKeySpec(
-                            new byte[]{
-                                (byte) 0x00, (byte) 0x01, (byte) 0x02, (byte) 0x03,
-                                (byte) 0xF0, (byte) 0xF1, (byte) 0xF2, (byte) 0xF3,
-                                (byte) 0xC0, (byte) 0xC1, (byte) 0xC2, (byte) 0xC3,
-                                (byte) 0x90, (byte) 0x91, (byte) 0x92, (byte) 0x93,
+                            new byte[] {
+                                (byte) 0x00, (byte) 0x01, (byte) 0x02,
+                                (byte) 0x03,
+                                (byte) 0xF0, (byte) 0xF1, (byte) 0xF2,
+                                (byte) 0xF3,
+                                (byte) 0xC0, (byte) 0xC1, (byte) 0xC2,
+                                (byte) 0xC3,
+                                (byte) 0x90, (byte) 0x91, (byte) 0x92,
+                                (byte) 0x93,
                             },
                             "HmacSHA256"
                         )
@@ -66,7 +70,7 @@ public final class MacOfTest {
                 )
             ).asBytes(),
             CoreMatchers.equalTo(
-                new byte[]{
+                new byte[] {
                     (byte) -48, (byte) 95, (byte) 87, (byte) 27,
                     (byte) 123, (byte) 116, (byte) -65, (byte) 107,
                     (byte) 41, (byte) 51, (byte) -46, (byte) -42,
