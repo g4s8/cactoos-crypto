@@ -1,3 +1,9 @@
+# WARNING
+
+It was an experiment repository, it contains POC library code. It's not producation ready. It'll be not supported.
+
+---
+
 # cactoos-crypto
 
 [![EO principles respected here](http://www.elegantobjects.org/badge.svg)](http://www.elegantobjects.org)
